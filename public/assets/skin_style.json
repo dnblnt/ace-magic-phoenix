@@ -1,0 +1,9 @@
+{
+    "defaultBtn": {
+        "font": {
+            "fontFamily": "Press Start 2P",
+            "fontSize": 24,
+            "fill": "#000000"
+        }
+    }
+}
