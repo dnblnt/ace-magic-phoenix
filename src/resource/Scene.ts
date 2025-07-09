@@ -7,7 +7,7 @@ export abstract class Scene extends Container {
     public update?(delta?: number): void;
 
     protected async addBackBtn(text = 'Back', x = 20, y = 20, onClick: () => void, style?: any) {
-        const btn = new UIButton(text, style);
+        const btn = new UIButton(text, style, { width: 120 });
         btn.position.set(x, y);
         btn.onClick(onClick);
         this.addChild(btn);

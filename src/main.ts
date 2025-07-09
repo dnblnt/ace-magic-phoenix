@@ -8,8 +8,9 @@ import './style.css';
 
 // Create the PIXI Application
 const app = new Application({
-  width: 1280,
-  height: 720,
+  // width: 1280,
+  // height: 720,
+  resizeTo: window,
   backgroundColor: 0x1099bb,
 });
 
@@ -19,7 +20,7 @@ document.body.appendChild(app.view as HTMLCanvasElement);
 // Add scenes to stage
 SceneManager.init(app);
 SceneManager.register('MainMenu', () => new MainMenu());
-// SceneManager.register('AceOfShadows', () => new AceOfShadows());
+SceneManager.register('AceOfShadows', () => new AceOfShadows());
 // SceneManager.register('MagicWords', () => new MagicWords());
 // SceneManager.register('PhoenixFlame', () => new PhoenixFlame());
 
