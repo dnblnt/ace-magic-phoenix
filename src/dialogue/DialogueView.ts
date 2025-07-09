@@ -5,7 +5,6 @@ import type { AvatarData, DialogueLine, EmojiData } from './DialogueModel';
 export class DialogueView extends Container {
 	private _emojiTextures: Record<string, Texture> = {};
 	private _avatarTextures: Record<string, Texture> = {};
-	private _currentRenderer?: RichTextRenderer;
 
 	private _style: {
 		nameStyle: Partial<TextStyle>,
@@ -50,7 +49,6 @@ export class DialogueView extends Container {
 		const renderer = new RichTextRenderer(line.text, this._emojiTextures, this._style.textStyle);
 		renderer.position.set(70, 90);
 		this.addChild(renderer);
-		this._currentRenderer = renderer;
 	}
 
 	public setSkinStyle(style: any) {
