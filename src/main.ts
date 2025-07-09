@@ -1,8 +1,8 @@
 import { Application } from 'pixi.js';
 import { SceneManager } from './resource/SceneManager';
 import { MainMenu } from './scenes/MainMenu';
-// import { MagicWords } from './scenes/MagicWords';
 import { AceOfShadows } from './scenes/AceOfShadows';
+import { MagicWords } from './scenes/MagicWords';
 import { FPSCounter } from './utils/FPSCounter';
 import './style.css';
 
@@ -21,7 +21,7 @@ document.body.appendChild(app.view as HTMLCanvasElement);
 SceneManager.init(app);
 SceneManager.register('MainMenu', () => new MainMenu());
 SceneManager.register('AceOfShadows', () => new AceOfShadows());
-// SceneManager.register('MagicWords', () => new MagicWords());
+SceneManager.register('MagicWords', () => new MagicWords());
 // SceneManager.register('PhoenixFlame', () => new PhoenixFlame());
 
 // Load main menu initially

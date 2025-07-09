@@ -5,5 +5,18 @@
             "fontSize": 24,
             "fill": "#000000"
         }
+    },
+    "dialogue": {
+        "nameStyle": {
+            "fill": "#ffffff",
+            "fontSize": 18,
+            "fontWeight": "bold",
+            "fontFamily": "Press Start 2P"
+        },
+        "textStyle": {
+            "fill": "#ffcc00",
+            "fontSize": 16,
+            "fontFamily": "Press Start 2P"
+        }
     }
 }
