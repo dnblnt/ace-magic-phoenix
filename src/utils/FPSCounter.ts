@@ -1,30 +1,30 @@
 import { Text } from 'pixi.js';
 
 export class FPSCounter extends Text {
-  private frameCount = 0;
-  private elapsed = 0;
-  private fps = 0;
+	private _frameCount = 0;
+	private _elapsed = 0;
+	private _fps = 0;
 
-  constructor() {
-    super('FPS: 0', {
-      fill: 'white',
-      fontSize: 14,
-      fontFamily: 'monospace'
-    });
+	constructor() {
+		super('FPS: 0', {
+			fill: 'white',
+			fontSize: 14,
+			fontFamily: 'monospace'
+		});
 
-    this.x = 10;
-    this.y = 10;
-  }
+		this.x = 10;
+		this.y = 10;
+	}
 
-  update(deltaMS: number) {
-    this.frameCount++;
-    this.elapsed += deltaMS;
+	update(deltaMS: number) {
+		this._frameCount++;
+		this._elapsed += deltaMS;
 
-    if (this.elapsed >= 1000) {
-      this.fps = Math.round((this.frameCount * 1000) / this.elapsed);
-      this.text = `FPS: ${this.fps}`;
-      this.elapsed = 0;
-      this.frameCount = 0;
-    }
-  }
+		if (this._elapsed >= 1000) {
+			this._fps = Math.round((this._frameCount * 1000) / this._elapsed);
+			this.text = `FPS: ${this._fps}`;
+			this._elapsed = 0;
+			this._frameCount = 0;
+		}
+	}
 }

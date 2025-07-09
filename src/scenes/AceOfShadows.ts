@@ -2,6 +2,7 @@ import { Sprite, Texture, Assets } from 'pixi.js';
 import { Scene } from '../resource/Scene';
 import { TweenManager } from '../utils/TweenManager';
 import { SceneManager } from '../resource/SceneManager';
+import { SceneKeys } from '../constants/SceneKeys';
 
 const ASSET_PATHS = {
     skin: 'assets/skin_style.json',
@@ -31,7 +32,8 @@ export class AceOfShadows extends Scene {
 
         this.sortableChildren = true;
 
-        await this.addBackBtn('Back', 20, 20, () => SceneManager.loadScene('MainMenu'), style.defaultBtn);
+        const mainMenu = SceneKeys.MAIN_MENU.id;
+        await this.addBackBtn('Back', 20, 20, () => SceneManager.loadScene(mainMenu), style.defaultBtn);
     }
 
     public update(delta: number): void {

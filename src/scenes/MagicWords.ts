@@ -2,6 +2,7 @@ import { Assets } from "pixi.js";
 import { DialogueController } from "../dialogue/DialogueController";
 import { Scene } from "../resource/Scene";
 import { SceneManager } from "../resource/SceneManager";
+import { SceneKeys } from "../constants/SceneKeys";
 
 const ASSET_PATHS = {
 	skin: 'assets/skin_style.json',
@@ -27,7 +28,8 @@ export class MagicWords extends Scene {
 		});
 
 		this.addChild(view);
-		await this.addBackBtn('Back', 20, 20, () => SceneManager.loadScene('MainMenu'), style.defaultBtn);
+		const mainMenu = SceneKeys.MAIN_MENU.id;
+		await this.addBackBtn('Back', 20, 20, () => SceneManager.loadScene(mainMenu), style.defaultBtn);
 	}
 
 	public onDestroy(): void {

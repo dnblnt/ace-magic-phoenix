@@ -3,6 +3,12 @@ import { Assets } from 'pixi.js';
 import { Scene } from '../resource/Scene';
 import { SceneManager } from '../resource/SceneManager';
 import { UIButton } from '../utils/UIButton';
+import { SceneKeys } from '../constants/SceneKeys';
+
+type SceneEntry = {
+	id: string,
+	label: string
+}
 
 const ASSET_PATHS = {
 	skin: 'assets/skin_style.json',
@@ -16,13 +22,13 @@ export class MainMenu extends Scene {
 		await Assets.load(Object.values(ASSET_PATHS));
 		const style = Assets.get(ASSET_PATHS.skin);
 
-		const aceOfShadowsBtn = this.createButton('AceOfShadows', 20, 50, style.defaultBtn);
+		const aceOfShadowsBtn = this.createButton(SceneKeys.ACE_OF_SHADOWS, 20, 50, style.defaultBtn);
 		this.addChild(aceOfShadowsBtn);
 
-		const magicWordsBtn = this.createButton('MagicWords', 20, 110, style.defaultBtn);
+		const magicWordsBtn = this.createButton(SceneKeys.MAGIC_WORDS, 20, 110, style.defaultBtn);
 		this.addChild(magicWordsBtn);
 
-		const phoenixFlameBtn = this.createButton('PhoenixFlame', 20, 170, style.defaultBtn);
+		const phoenixFlameBtn = this.createButton(SceneKeys.PHOENIX_FLAME, 20, 170, style.defaultBtn);
 		this.addChild(phoenixFlameBtn);
 	}
 
@@ -30,12 +36,12 @@ export class MainMenu extends Scene {
 		this.removeChildren();
 	}
 
-	private createButton(scene: string, x: number, y: number, style: any): UIButton {
-		const playButton = new UIButton(scene, style);
+	private createButton(scene: SceneEntry, x: number, y: number, style: any): UIButton {
+		const playButton = new UIButton(scene.label, style);
 		playButton.x = x;
 		playButton.y = y;
 		playButton.onClick(() => {
-			SceneManager.loadScene(scene);
+			SceneManager.loadScene(scene.id);
 		});
 		return playButton;
 	}
