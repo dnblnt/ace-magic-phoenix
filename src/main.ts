@@ -1,7 +1,7 @@
 import { Application } from 'pixi.js';
 import { SceneManager } from './resource/SceneManager';
 import { MainMenu } from './scenes/MainMenu';
-import { MagicWords } from './scenes/MagicWords';
+// import { MagicWords } from './scenes/MagicWords';
 import { AceOfShadows } from './scenes/AceOfShadows';
 import { FPSCounter } from './utils/FPSCounter';
 import './style.css';
