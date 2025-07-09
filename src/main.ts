@@ -3,13 +3,12 @@ import { SceneManager } from './resource/SceneManager';
 import { MainMenu } from './scenes/MainMenu';
 import { AceOfShadows } from './scenes/AceOfShadows';
 import { MagicWords } from './scenes/MagicWords';
+import { PhoenixFlame } from './scenes/PhoenixFlame';
 import { FPSCounter } from './utils/FPSCounter';
 import './style.css';
 
 // Create the PIXI Application
 const app = new Application({
-  // width: 1280,
-  // height: 720,
   resizeTo: window,
   backgroundColor: 0x1099bb,
 });
@@ -22,7 +21,7 @@ SceneManager.init(app);
 SceneManager.register('MainMenu', () => new MainMenu());
 SceneManager.register('AceOfShadows', () => new AceOfShadows());
 SceneManager.register('MagicWords', () => new MagicWords());
-// SceneManager.register('PhoenixFlame', () => new PhoenixFlame());
+SceneManager.register('PhoenixFlame', () => new PhoenixFlame());
 
 // Load main menu initially
 SceneManager.loadScene('MainMenu');
